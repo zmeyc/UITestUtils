@@ -30,6 +30,27 @@ class ExampleAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        let tabBar = app.tabBars
+        tabBar.buttons["Second"].tap()
+        wait(5)
+        tabBar.buttons["First"].tap()
+        wait(5)
+        
+    }
+
+    // - MARK: wait()
+    
+    var waitExpectation: XCTestExpectation?
+    
+    func wait(duration: NSTimeInterval) {
+        waitExpectation = expectationWithDescription("wait")
+        NSTimer.scheduledTimerWithTimeInterval(duration, target: self,
+            selector: Selector("onTimer"), userInfo: nil, repeats: false)
+        waitForExpectationsWithTimeout(duration + 3, handler: nil)
     }
     
+    func onTimer() {
+        waitExpectation?.fulfill()
+    }
 }
