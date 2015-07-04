@@ -1,0 +1,3 @@
+[submodule "UITestServer/UITestServer/ThirdParty/swifter"]
+	path = UITestServer/UITestServer/ThirdParty/swifter
+	url = https://github.com/glock45/swifter.git

@@ -7,4 +7,7 @@
    <FileRef
       location = "container:UITestUtils/UITestUtils.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:UITestServer/UITestServer.xcodeproj">
+   </FileRef>
 </Workspace>

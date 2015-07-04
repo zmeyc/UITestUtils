@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4EFFEE045BFE270D9512EBDCB8690084ECBB7978",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "75224C288D14A799245F99223249EF48FF5DC280" : 0,
+    "4EFFEE045BFE270D9512EBDCB8690084ECBB7978" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "53FDDD82-5A2A-404A-943D-353CCA85B387",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "75224C288D14A799245F99223249EF48FF5DC280" : "UITestUtils\/UITestServer\/UITestServer\/ThirdParty\/swifter\/",
+    "4EFFEE045BFE270D9512EBDCB8690084ECBB7978" : "UITestUtils\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UITestUtils",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UITestUtils.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zmeyc\/UITestUtils.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4EFFEE045BFE270D9512EBDCB8690084ECBB7978"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/glock45\/swifter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "75224C288D14A799245F99223249EF48FF5DC280"
+    }
+  ]
+}
