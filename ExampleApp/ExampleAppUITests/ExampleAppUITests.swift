@@ -48,10 +48,23 @@ class ExampleAppUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let app = XCUIApplication()
         let tabBar = app.tabBars
+        
         tabBar.buttons["Second"].tap()
-        waitForDuration(5)
+        waitForDuration(2)
+        
+        let textField = app.textFields["Enter text"]
+        textField.tap()
+        textField.typeText("Alert text")
+        waitForDuration(2)
+
+        app.buttons["Alert"].tap()
+        waitForDuration(2)
+        
+        app.sheets["Message"].collectionViews
+            .buttons["Ok"].tap()
+        waitForDuration(2)
+
         tabBar.buttons["First"].tap()
         waitForDuration(5)
-        
     }
 }
