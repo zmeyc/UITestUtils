@@ -15,6 +15,7 @@
 		CE8636FE1B474824006B54EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8636FC1B474824006B54EC /* LaunchScreen.storyboard */; };
 		CE8637091B474824006B54EC /* ExampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8637081B474824006B54EC /* ExampleAppTests.swift */; };
 		CE8637141B474824006B54EC /* ExampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8637131B474824006B54EC /* ExampleAppUITests.swift */; };
+		CE8C6E641B47BEBE007CF215 /* UITestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE8C6E621B47BEB9007CF215 /* UITestUtils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CE86370F1B474824006B54EC /* ExampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8637131B474824006B54EC /* ExampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAppUITests.swift; sourceTree = "<group>"; };
 		CE8637151B474824006B54EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8C6E621B47BEB9007CF215 /* UITestUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UITestUtils.framework; path = "../UITestUtils/build/Debug-iphoneos/UITestUtils.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8C6E641B47BEBE007CF215 /* UITestUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 		CE8636E51B474824006B54EC = {
 			isa = PBXGroup;
 			children = (
+				CE8C6E621B47BEB9007CF215 /* UITestUtils.framework */,
 				CE8636F01B474824006B54EC /* ExampleApp */,
 				CE8637071B474824006B54EC /* ExampleAppTests */,
 				CE8637121B474824006B54EC /* ExampleAppUITests */,
@@ -487,6 +491,7 @@
 				CE86371A1B474824006B54EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE86371B1B474824006B54EC /* Build configuration list for PBXNativeTarget "ExampleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				CE86371D1B474824006B54EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE86371E1B474824006B54EC /* Build configuration list for PBXNativeTarget "ExampleAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				CE8637201B474824006B54EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

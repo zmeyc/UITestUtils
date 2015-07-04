@@ -10,6 +10,7 @@
 		CE60102D1B4746F400773C38 /* UITestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CE60102C1B4746F400773C38 /* UITestUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE6010341B4746F400773C38 /* UITestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6010291B4746F400773C38 /* UITestUtils.framework */; };
 		CE6010391B4746F400773C38 /* UITestUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6010381B4746F400773C38 /* UITestUtilsTests.swift */; };
+		CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		CE6010331B4746F400773C38 /* UITestUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITestUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6010381B4746F400773C38 /* UITestUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestUtilsTests.swift; sourceTree = "<group>"; };
 		CE60103A1B4746F400773C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		CE60102B1B4746F400773C38 /* UITestUtils */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */,
 				CE60102C1B4746F400773C38 /* UITestUtils.h */,
 				CE60102E1B4746F400773C38 /* Info.plist */,
 			);
@@ -142,6 +145,7 @@
 		CE6010201B4746F400773C38 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Zabiyaka;
 				TargetAttributes = {
@@ -193,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +243,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -286,6 +292,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -307,6 +314,7 @@
 		CE60103E1B4746F400773C38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +325,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zabiyaka.UITestUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CE60103F1B4746F400773C38 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,6 +385,7 @@
 				CE60103F1B4746F400773C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE6010401B4746F400773C38 /* Build configuration list for PBXNativeTarget "UITestUtilsTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +394,7 @@
 				CE6010421B4746F400773C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

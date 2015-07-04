@@ -1,5 +1,5 @@
 //
-//  ExampleAppUITests.swift
+//  XCTestCase+Wait.swift
 //
 //  Copyright (c) 2015 Andrey Fidrya
 //
@@ -23,35 +23,20 @@
 
 import Foundation
 import XCTest
-import UITestUtils
 
-class ExampleAppUITests: XCTestCase {
-        
-    override func setUp() {
-        super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+extension XCTestCase {
+    private struct WaitData {
+        static var waitExpectation: XCTestExpectation?
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    public func waitForDuration(duration: NSTimeInterval) {
+        WaitData.waitExpectation = expectationWithDescription("wait")
+        NSTimer.scheduledTimerWithTimeInterval(duration, target: self,
+            selector: Selector("waitForDurationDone"), userInfo: nil, repeats: false)
+        waitForExpectationsWithTimeout(duration + 3, handler: nil)
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let app = XCUIApplication()
-        let tabBar = app.tabBars
-        tabBar.buttons["Second"].tap()
-        waitForDuration(5)
-        tabBar.buttons["First"].tap()
-        waitForDuration(5)
-        
+    func waitForDurationDone() {
+        WaitData.waitExpectation?.fulfill()
     }
 }
