@@ -96,3 +96,12 @@ Sample code is located in `ExampleApp/ExampleAppUITests/ExampleAppUITests.swift`
 
 Check the `testExample()` test.
 
+## Licensing
+
+UITestUtils (except third party components) is available under the MIT license.
+Please see LICENSE file for details.
+
+UITestUtils uses Swifter HTTP server engine.
+Swifter license: UITestServer/ThirdParty/swifter/LICENSE
+
+
