@@ -36,7 +36,19 @@ extension XCTestCase {
         set { ScreenshotsData.uiTestServerAddress = newValue }
     }
     
-    public func saveScreenshot(filename: String) {
+    public func saveScreenshot(filename: String, createDirectory: Bool = true) {
+        if createDirectory {
+            let directory = filename.stringByDeletingLastPathComponent
+            let fileManager = NSFileManager.defaultManager()
+            if !fileManager.fileExistsAtPath(directory) {
+                do {
+                    try fileManager.createDirectoryAtPath(directory, withIntermediateDirectories: true, attributes: nil)
+                } catch {
+                    // Ignore
+                }
+            }
+        }
+        
         let urlString = "\(ScreenshotsData.uiTestServerAddress)/screenshot.png"
         let endpoint = NSURL(string: urlString)
         guard let url = endpoint else {
@@ -62,7 +74,9 @@ extension XCTestCase {
                 XCTFail("Empty screenshot received")
                 return
             }
-            imageData.writeToFile(filename, atomically: false)
+            if !imageData.writeToFile(filename, atomically: false) {
+                XCTFail("Unable to save the screenshot: \(filename)")
+            }
             expectation.fulfill()
         }
         guard let task = dataTask else {

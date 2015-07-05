@@ -80,11 +80,16 @@ waitForDuration(5)
 ### saveScreenshot
 
 ```swift
-func saveScreenshot(filename: String)
+func saveScreenshot(filename: String, createDirectory: Bool = true)
 ```
 
 Captures screenshot and saves it as *filename* on local disk.
-Requires UITestServer to be running on the app side. Example:
+Requires UITestServer to be running on the app side.
+
+If createDirectory is true (default), tries to create all parent
+directories specified in filename.
+
+Example:
 
 ```swift
 saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
