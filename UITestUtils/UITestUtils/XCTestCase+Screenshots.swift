@@ -62,7 +62,7 @@ extension XCTestCase {
                 XCTFail("Empty screenshot received")
                 return
             }
-            imageData.writeToFile("/Users/user/Temp/Screenshots/test.png", atomically: false)
+            imageData.writeToFile(filename, atomically: false)
             expectation.fulfill()
         }
         guard let task = dataTask else {
@@ -71,5 +71,6 @@ extension XCTestCase {
         }
         task.resume()
         waitForExpectationsWithTimeout(10.0, handler: nil)
+        print("Screenshot saved: \(filename)")
     }
 }
