@@ -95,6 +95,15 @@ Example:
 saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
 ```
 
+### uiTestServerAddress
+
+```swift
+var uiTestServerAddress: String = 'http://localhost:5000'
+```
+
+Override UITestServer address and/or port by setting this property.
+When running the app on device, this property should be set to device's IP address.
+
 ## Sample code
 
 Sample code is located in `ExampleApp/ExampleAppUITests/ExampleAppUITests.swift`
