@@ -1,5 +1,5 @@
 //
-//  UITestServer.h
+//  PrivateUtils.h
 //
 //  Copyright (c) 2015 Andrey Fidrya
 //
@@ -23,12 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for UITestServer.
-FOUNDATION_EXPORT double UITestServerVersionNumber;
+@interface PrivateUtils : NSObject
 
-//! Project version string for UITestServer.
-FOUNDATION_EXPORT const unsigned char UITestServerVersionString[];
++ (UIImage *)takeScreenshot;
 
-// In this header, you should import all the public headers of your framework using statements like #import <UITestServer/PublicHeader.h>
-#import "PrivateUtils.h"
-
+@end

@@ -11,6 +11,7 @@
 		CE6010341B4746F400773C38 /* UITestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6010291B4746F400773C38 /* UITestUtils.framework */; };
 		CE6010391B4746F400773C38 /* UITestUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6010381B4746F400773C38 /* UITestUtilsTests.swift */; };
 		CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */; };
+		CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		CE6010381B4746F400773C38 /* UITestUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestUtilsTests.swift; sourceTree = "<group>"; };
 		CE60103A1B4746F400773C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
+		CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Screenshots.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */,
+				CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */,
 				CE60102C1B4746F400773C38 /* UITestUtils.h */,
 				CE60102E1B4746F400773C38 /* Info.plist */,
 			);
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */,
 				CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

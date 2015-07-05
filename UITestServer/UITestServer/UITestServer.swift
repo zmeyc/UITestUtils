@@ -1,5 +1,5 @@
 //
-//  UITestServer.h
+//  UITestServer.swift
 //
 //  Copyright (c) 2015 Andrey Fidrya
 //
@@ -21,14 +21,31 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+import UIKit
 
-//! Project version number for UITestServer.
-FOUNDATION_EXPORT double UITestServerVersionNumber;
-
-//! Project version string for UITestServer.
-FOUNDATION_EXPORT const unsigned char UITestServerVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <UITestServer/PublicHeader.h>
-#import "PrivateUtils.h"
-
+public class UITestServer {
+    
+    public static let sharedInstance = UITestServer()
+    
+    public func listen(port: in_port_t = 5000) {
+        let server = HttpServer()
+        
+        server["/screenshot.png"] = { request in
+            guard let screenshot = UITestServer.takeScreenshot() else {
+                return .InternalServerError
+            }
+            guard let data = UIImagePNGRepresentation(screenshot) else {
+                print("Unable to create PNG")
+                return .InternalServerError
+            }
+            return .RAW(200, data)
+        }
+        
+        print("Starting UI Test server on port \(port)")
+        server.start(port)
+    }
+    
+    private class func takeScreenshot() -> UIImage? {
+        return PrivateUtils.takeScreenshot()
+    }
+}

@@ -1,5 +1,5 @@
 //
-//  UITestServer.h
+//  PrivateUtils.m
 //
 //  Copyright (c) 2015 Andrey Fidrya
 //
@@ -21,14 +21,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for UITestServer.
-FOUNDATION_EXPORT double UITestServerVersionNumber;
-
-//! Project version string for UITestServer.
-FOUNDATION_EXPORT const unsigned char UITestServerVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <UITestServer/PublicHeader.h>
 #import "PrivateUtils.h"
 
+@implementation PrivateUtils
+
+#ifdef DEBUG
+UIImage *_UICreateScreenUIImage();
+#endif
+
++ (UIImage *)takeScreenshot {
+#ifdef DEBUG
+    return _UICreateScreenUIImage();
+#else
+    return nil;
+#endif
+}
+
+@end

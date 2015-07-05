@@ -46,11 +46,15 @@ class ExampleAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        uiTestServerAddress = "http://localhost:5000"
+        
         let app = XCUIApplication()
         let tabBar = app.tabBars
         
         tabBar.buttons["Second"].tap()
         waitForDuration(2)
+        
+        saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
         
         let textField = app.textFields["Enter text"]
         textField.tap()

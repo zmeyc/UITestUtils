@@ -18,6 +18,9 @@
 		CE8C6ED41B47DB87007CF215 /* HttpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6EB81B47DB87007CF215 /* HttpServer.swift */; };
 		CE8C6ED51B47DB87007CF215 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6EB91B47DB87007CF215 /* Socket.swift */; };
 		CE8C6ED81B47DB87007CF215 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CE8C6EBC1B47DB87007CF215 /* LICENSE */; };
+		CE98A3501B495C71002C6627 /* UITestServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE98A34F1B495C71002C6627 /* UITestServer.swift */; };
+		CE98A3551B496A23002C6627 /* PrivateUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CE98A3531B496A23002C6627 /* PrivateUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE98A3561B496A23002C6627 /* PrivateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE98A3541B496A23002C6627 /* PrivateUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		CE8C6EB91B47DB87007CF215 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		CE8C6EBC1B47DB87007CF215 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CE8C6EBD1B47DB87007CF215 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE98A34F1B495C71002C6627 /* UITestServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestServer.swift; sourceTree = "<group>"; };
+		CE98A3531B496A23002C6627 /* PrivateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateUtils.h; sourceTree = "<group>"; };
+		CE98A3541B496A23002C6627 /* PrivateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivateUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				CE8C6EAF1B47DB87007CF215 /* ThirdParty */,
+				CE98A34F1B495C71002C6627 /* UITestServer.swift */,
 				CE8C6E981B47DB0A007CF215 /* UITestServer.h */,
 				CE8C6E9A1B47DB0A007CF215 /* Info.plist */,
+				CE98A3531B496A23002C6627 /* PrivateUtils.h */,
+				CE98A3541B496A23002C6627 /* PrivateUtils.m */,
 			);
 			path = UITestServer;
 			sourceTree = "<group>";
@@ -143,6 +152,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE98A3551B496A23002C6627 /* PrivateUtils.h in Headers */,
 				CE8C6E991B47DB0A007CF215 /* UITestServer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,6 +202,7 @@
 		CE8C6E8C1B47DB0A007CF215 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Zabiyaka;
 				TargetAttributes = {
@@ -247,6 +258,8 @@
 			files = (
 				CE8C6ED31B47DB87007CF215 /* HttpResponse.swift in Sources */,
 				CE8C6ED51B47DB87007CF215 /* Socket.swift in Sources */,
+				CE98A3501B495C71002C6627 /* UITestServer.swift in Sources */,
+				CE98A3561B496A23002C6627 /* PrivateUtils.m in Sources */,
 				CE8C6ED01B47DB87007CF215 /* HttpHandlers.swift in Sources */,
 				CE8C6ED41B47DB87007CF215 /* HttpServer.swift in Sources */,
 				CE8C6ED21B47DB87007CF215 /* HttpRequest.swift in Sources */,
@@ -366,6 +379,7 @@
 		CE8C6EAA1B47DB0A007CF215 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,12 +390,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zabiyaka.UITestServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CE8C6EAB1B47DB0A007CF215 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -392,6 +409,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zabiyaka.UITestServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -434,6 +452,7 @@
 				CE8C6EAB1B47DB0A007CF215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE8C6EAC1B47DB0A007CF215 /* Build configuration list for PBXNativeTarget "UITestServerTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +461,7 @@
 				CE8C6EAE1B47DB0A007CF215 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
