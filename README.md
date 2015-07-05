@@ -90,3 +90,9 @@ Requires UITestServer to be running on the app side. Example:
 saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
 ```
 
+## Sample code
+
+Sample code is located in `ExampleApp/ExampleAppUITests/ExampleAppUITests.swift`
+
+Check the `testExample()` test.
+
