@@ -104,6 +104,10 @@ var uiTestServerAddress: String = 'http://localhost:5000'
 Override UITestServer address and/or port by setting this property.
 When running the app on device, this property should be set to device's IP address.
 
+## Utilities
+
+Use `Scripts/reset_simulators.sh` script to reset all simulators to their original state.
+
 ## Sample code
 
 Sample code is located in `ExampleApp/ExampleAppUITests/ExampleAppUITests.swift`
