@@ -41,11 +41,26 @@ public class UITestServer {
             return .RAW(200, data)
         }
         
+        server["/screenResolution"] = { request in
+            let resolution = UITestServer.screenResolution()
+            let data = resolution.dataUsingEncoding(NSUTF8StringEncoding) ?? NSData()
+            return .RAW(200, data)
+        }
+        
         print("Starting UI Test server on port \(port)")
         server.start(port)
     }
     
     private class func takeScreenshot() -> UIImage? {
         return PrivateUtils.takeScreenshot()
+    }
+    
+    private class func screenResolution() -> String {
+        let screen = UIScreen.mainScreen()
+        let bounds = screen.bounds
+        let scale = screen.scale
+        let width = Int(bounds.size.width * scale)
+        let height = Int(bounds.size.height * scale)
+        return "\(width)x\(height)"
     }
 }

@@ -16,7 +16,7 @@ func testExample() {
 
 	app.buttons["Alert"].tap()
 
-	saveScreenshot("\(realHomeDirectory)/Screenshots/screenshot.png")
+	saveScreenshot("\(realHomeDirectory)/Screenshots/\(screenResolution)_Screenshot1.png")
 
 	restoreStatusBar() // Restore original status bar
 }
@@ -143,6 +143,14 @@ Example: save a screenshot to "~/MyAppScreenshots":
 ```swift
 saveScreenshot("\(realHomeDirectory)/MyAppScreenshots/screenshot.png")
 ```
+
+```swift
+let screenResolution: String
+```
+
+Screen resolution in the format "640x960". Rotation is taken into account.
+Local UIScreen object returns incorrect resolution, so the resolution is retrieved from the app.
+Requires UITestServer to be running on the app side.
 
 ## Utilities
 

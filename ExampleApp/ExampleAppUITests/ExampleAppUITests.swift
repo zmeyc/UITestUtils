@@ -59,7 +59,7 @@ class ExampleAppUITests: XCTestCase {
         tabBar.buttons["Second"].tap()
         waitForDuration(2)
         
-        saveScreenshot("\(realHomeDirectory)/Temp/Screenshots/screenshot.png")
+        saveScreenshot("\(realHomeDirectory)/Temp/Screenshots/\(screenResolution)_Screenshot1.png")
         
         let textField = app.textFields["Enter text"]
         textField.tap()
