@@ -36,31 +36,7 @@ extension XCTestCase {
         //let height = Int(bounds.size.height * scale)
         //return "\(width)x\(height)"
         
-        guard let url = urlForEndpoint("screenResolution") else {
-            XCTFail("Invalid URL")
-            return ""
-        }
-        
-        let request = NSURLRequest(URL: url)
-        
-        var result: String = ""
-        let expectation = expectationWithDescription("dataTask")
-        let dataTask = session.dataTaskWithRequest(request) { data, response, error in
-            // WARNING: NOT a main queue
-            guard let resData = data else {
-                XCTFail("No data received (UITestServer not running?)")
-                return
-            }
-            let resolution = NSString(data: resData, encoding: NSUTF8StringEncoding) ?? ""
-            result = resolution as String
-            expectation.fulfill()
-        }
-        guard let task = dataTask else {
-            XCTFail("Unable to create dataTask")
-            return ""
-        }
-        task.resume()
-        waitForExpectationsWithTimeout(10.0, handler: nil)
-        return result
+        let resolution = stringFromRemoteEndpoint("screenResolution")
+        return resolution
     }
 }

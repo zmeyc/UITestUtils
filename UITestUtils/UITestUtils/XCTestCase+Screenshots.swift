@@ -37,36 +37,19 @@ extension XCTestCase {
                 }
             }
         }
-        
-        guard let url = urlForEndpoint("screenshot.png") else {
-            XCTFail("Invalid URL")
+
+        let data = dataFromRemoteEndpoint("screenshot.png")
+        guard let imageData = data else {
+            XCTFail("No data received (UITestServer not running?)")
             return
         }
-        
-        let request = NSURLRequest(URL: url)
-        
-        let expectation = expectationWithDescription("dataTask")
-        let dataTask = session.dataTaskWithRequest(request) { data, response, error in
-            // WARNING: NOT a main queue
-            guard let imageData = data else {
-                XCTFail("No data received (UITestServer not running?)")
-                return
-            }
-            if imageData.length == 0 {
-                XCTFail("Empty screenshot received")
-                return
-            }
-            if !imageData.writeToFile(filename, atomically: false) {
-                XCTFail("Unable to save the screenshot: \(filename)")
-            }
-            expectation.fulfill()
-        }
-        guard let task = dataTask else {
-            XCTFail("Unable to create dataTask")
+        if imageData.length == 0 {
+            XCTFail("Empty screenshot received")
             return
         }
-        task.resume()
-        waitForExpectationsWithTimeout(10.0, handler: nil)
+        if !imageData.writeToFile(filename, atomically: false) {
+            XCTFail("Unable to save the screenshot: \(filename)")
+        }
         print("Screenshot saved: \(filename)")
     }
 }

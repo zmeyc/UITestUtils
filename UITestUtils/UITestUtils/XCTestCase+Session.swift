@@ -57,13 +57,14 @@ extension XCTestCase {
         return url
     }
     
-    func callRemoteEndpoint(endpoint: String) {
+    func dataFromRemoteEndpoint(endpoint: String) -> NSData? {
         guard let url = urlForEndpoint(endpoint) else {
-            return
+            return nil
         }
         
         let request = NSURLRequest(URL: url)
         
+        var result: NSData? = nil
         let expectation = expectationWithDescription("dataTask")
         let dataTask = session.dataTaskWithRequest(request) { data, response, error in
             // WARNING: NOT a main queue
@@ -77,14 +78,29 @@ extension XCTestCase {
                     return
                 }
             }
+            guard let responseData = data else {
+                XCTFail("No data received (UITestServer not running?)")
+                return
+            }
+            result = responseData
             expectation.fulfill()
         }
         guard let task = dataTask else {
             XCTFail("Unable to create dataTask")
-            return
+            return nil
         }
         task.resume()
         waitForExpectationsWithTimeout(10.0, handler: nil)
+        return result
+    }
+    
+    func stringFromRemoteEndpoint(endpoint: String) -> String {
+        let data = dataFromRemoteEndpoint(endpoint)
+        if let stringData = data {
+            let resolution = NSString(data: stringData, encoding: NSUTF8StringEncoding) ?? ""
+            return resolution as String
+        }
+        return ""
     }
 }
 
