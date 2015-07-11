@@ -2,6 +2,26 @@
 
 UITestUtils extend Xcode7 UI Testing framework (XCTest).
 
+```swift
+func testExample() {
+	//uiTestServerAddress = "http://localhost:5000" // test device IP address, localhost for Simulator
+        
+	let app = XCUIApplication()
+
+	overrideStatusBar() // Set 9:41 AM, 100% battery
+
+	app.textFields["Enter text"].typeText("Alert text")
+
+	waitForDuration(2) // Wait 2 seconds
+
+	app.buttons["Alert"].tap()
+
+	saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
+
+	restoreStatusBar() // Restore original status bar
+}
+```
+
 # Features
 
 * Automate screenshot capture for AppStore submission
