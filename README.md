@@ -128,7 +128,7 @@ var uiTestServerAddress: String = 'http://localhost:5000'
 Override UITestServer address and/or port by setting this property.
 When running the app on device, this property should be set to device's IP address.
 
-### homeDirectory
+### realHomeDirectory
 
 ```swift
 let realHomeDirectory: String
@@ -148,6 +148,8 @@ Example: save a screenshot to "~/MyAppScreenshots":
 saveScreenshot("\(realHomeDirectory)/MyAppScreenshots/screenshot.png")
 ```
 
+### screenResolution
+
 ```swift
 let screenResolution: String
 ```
@@ -156,12 +158,16 @@ Screen resolution in the format "640x960". Rotation is taken into account.
 Local UIScreen object returns incorrect resolution, so the resolution is retrieved from the app.
 Requires UITestServer to be running on the app side.
 
+### deviceType
+
 ```swift
 let deviceType: String
 ```
 
 Returns 'pad' or 'phone'.
 Requires UITestServer to be running on the app side.
+
+### orientation
 
 ```swift
 var orientation: UIInterfaceOrientation
