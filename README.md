@@ -152,6 +152,13 @@ Screen resolution in the format "640x960". Rotation is taken into account.
 Local UIScreen object returns incorrect resolution, so the resolution is retrieved from the app.
 Requires UITestServer to be running on the app side.
 
+```swift
+let deviceType: String
+```
+
+Returns 'pad' or 'phone'.
+Requires UITestServer to be running on the app side.
+
 ## Utilities
 
 Use `Scripts/reset_simulators.sh` script to reset all simulators to their original state.

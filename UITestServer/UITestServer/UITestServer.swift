@@ -47,6 +47,12 @@ public class UITestServer {
             return .RAW(200, data)
         }
         
+        server["/deviceType"] = { request in
+            let deviceType = UITestServer.deviceType()
+            let data = deviceType.dataUsingEncoding(NSUTF8StringEncoding) ?? NSData()
+            return .RAW(200, data)
+        }
+        
         print("Starting UI Test server on port \(port)")
         server.start(port)
     }
@@ -62,5 +68,9 @@ public class UITestServer {
         let width = Int(bounds.size.width * scale)
         let height = Int(bounds.size.height * scale)
         return "\(width)x\(height)"
+    }
+    
+    private class func deviceType() -> String {
+        return UIDevice.currentDevice().userInterfaceIdiom == .Pad ? "pad" : "phone"
     }
 }

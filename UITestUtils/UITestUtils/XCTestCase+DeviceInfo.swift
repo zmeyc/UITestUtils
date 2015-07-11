@@ -36,7 +36,10 @@ extension XCTestCase {
         //let height = Int(bounds.size.height * scale)
         //return "\(width)x\(height)"
         
-        let resolution = stringFromRemoteEndpoint("screenResolution")
-        return resolution
+        return stringFromRemoteEndpoint("screenResolution")
+    }
+    
+    public var deviceType: String {
+        return stringFromRemoteEndpoint("deviceType")
     }
 }
