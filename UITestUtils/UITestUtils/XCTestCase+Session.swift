@@ -1,5 +1,5 @@
 //
-//  XCTestCase+Screenshots.swift
+//  XCTestCase+Session.swift
 //
 //  Copyright (c) 2015 Andrey Fidrya
 //
@@ -25,21 +25,40 @@ import Foundation
 import XCTest
 
 extension XCTestCase {
-    public func saveScreenshot(filename: String, createDirectory: Bool = true) {
-        if createDirectory {
-            let directory = filename.stringByDeletingLastPathComponent
-            let fileManager = NSFileManager.defaultManager()
-            if !fileManager.fileExistsAtPath(directory) {
-                do {
-                    try fileManager.createDirectoryAtPath(directory, withIntermediateDirectories: true, attributes: nil)
-                } catch {
-                    // Ignore
-                }
-            }
-        }
+    private struct SessionData {
+        static var uiTestServerAddress = "http://localhost:5000"
         
-        guard let url = urlForEndpoint("screenshot.png") else {
-            XCTFail("Invalid URL")
+        static var session: NSURLSession?
+    }
+    
+    public var uiTestServerAddress: String {
+        get { return SessionData.uiTestServerAddress }
+        set { SessionData.uiTestServerAddress = newValue }
+    }
+    
+    var session: NSURLSession {
+        get {
+            if SessionData.session == nil {
+                let sessionConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+                //SessionData.session = NSURLSession(configuration: sessionConfig, delegate: nil, delegateQueue: NSOperationQueue.mainQueue())
+                SessionData.session = NSURLSession(configuration: sessionConfig)
+            }
+            return SessionData.session!
+        }
+    }
+    
+    func urlForEndpoint(endpoint: String) -> NSURL? {
+        let urlString = "\(SessionData.uiTestServerAddress)/\(endpoint)"
+        let endpoint = NSURL(string: urlString)
+        guard let url = endpoint else {
+            XCTFail("Invalid URL: \(urlString)")
+            return nil
+        }
+        return url
+    }
+    
+    func callRemoteEndpoint(endpoint: String) {
+        guard let url = urlForEndpoint(endpoint) else {
             return
         }
         
@@ -48,16 +67,15 @@ extension XCTestCase {
         let expectation = expectationWithDescription("dataTask")
         let dataTask = session.dataTaskWithRequest(request) { data, response, error in
             // WARNING: NOT a main queue
-            guard let imageData = data else {
-                XCTFail("No data received (UITestServer not running?)")
+            if error != nil {
+                XCTFail("dataTaskWithRequest error (please check if UITestServer is running): \(error)")
                 return
             }
-            if imageData.length == 0 {
-                XCTFail("Empty screenshot received")
-                return
-            }
-            if !imageData.writeToFile(filename, atomically: false) {
-                XCTFail("Unable to save the screenshot: \(filename)")
+            if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode != 200 {
+                    XCTFail("dataTaskWithRequest: status code \(httpResponse.statusCode) received, please check if UITestServer is running")
+                    return
+                }
             }
             expectation.fulfill()
         }
@@ -67,6 +85,6 @@ extension XCTestCase {
         }
         task.resume()
         waitForExpectationsWithTimeout(10.0, handler: nil)
-        print("Screenshot saved: \(filename)")
     }
 }
+
