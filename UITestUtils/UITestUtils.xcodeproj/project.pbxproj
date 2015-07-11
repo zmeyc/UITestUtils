@@ -27,6 +27,8 @@
 		CE9101B01B51551B006435D3 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9101AE1B51551B006435D3 /* FSUtils.m */; };
 		CE9101B21B515DDE006435D3 /* XCTestCase+DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9101B11B515DDE006435D3 /* XCTestCase+DeviceInfo.swift */; };
 		CE9101B61B5169A8006435D3 /* XCTestCase+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9101B51B5169A8006435D3 /* XCTestCase+Session.swift */; };
+		CEE1DB091B518FBF004460A0 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE1DB071B518FBF004460A0 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEE1DB0A1B518FBF004460A0 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DB081B518FBF004460A0 /* NSString+URLEncode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		CE9101AE1B51551B006435D3 /* FSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUtils.m; sourceTree = "<group>"; };
 		CE9101B11B515DDE006435D3 /* XCTestCase+DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+DeviceInfo.swift"; sourceTree = "<group>"; };
 		CE9101B51B5169A8006435D3 /* XCTestCase+Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Session.swift"; sourceTree = "<group>"; };
+		CEE1DB071B518FBF004460A0 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
+		CEE1DB081B518FBF004460A0 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				CE9101AB1B5154B6006435D3 /* XCTestCase+Home.swift */,
 				CE9101B11B515DDE006435D3 /* XCTestCase+DeviceInfo.swift */,
 				CE9101B51B5169A8006435D3 /* XCTestCase+Session.swift */,
+				CEE1DB071B518FBF004460A0 /* NSString+URLEncode.h */,
+				CEE1DB081B518FBF004460A0 /* NSString+URLEncode.m */,
 				CE9101AD1B51551B006435D3 /* FSUtils.h */,
 				CE9101AE1B51551B006435D3 /* FSUtils.m */,
 				CE60102C1B4746F400773C38 /* UITestUtils.h */,
@@ -174,6 +180,7 @@
 				CE9101951B51462B006435D3 /* SDStatusBarOverriderPre8_3.h in Headers */,
 				CE9101901B51462B006435D3 /* SDStatusBarOverrider.h in Headers */,
 				CE91018E1B51462B006435D3 /* SDStatusBarManager.h in Headers */,
+				CEE1DB091B518FBF004460A0 /* NSString+URLEncode.h in Headers */,
 				CE9101AF1B51551B006435D3 /* FSUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +291,7 @@
 				CE91018F1B51462B006435D3 /* SDStatusBarManager.m in Sources */,
 				CE9101AC1B5154B6006435D3 /* XCTestCase+Home.swift in Sources */,
 				CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */,
+				CEE1DB0A1B518FBF004460A0 /* NSString+URLEncode.m in Sources */,
 				CE9101B61B5169A8006435D3 /* XCTestCase+Session.swift in Sources */,
 				CE9101A81B51499F006435D3 /* XCTestCase+StatusBar.swift in Sources */,
 				CE9101921B51462B006435D3 /* SDStatusBarOverriderPost8_3.m in Sources */,

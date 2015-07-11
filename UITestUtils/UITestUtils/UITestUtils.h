@@ -17,4 +17,5 @@ FOUNDATION_EXPORT const unsigned char UITestUtilsVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <UITestUtils/PublicHeader.h>
 
 #include "SDStatusBarManager.h"
+#include "NSString+URLEncode.h"
 #include "FSUtils.h"

@@ -42,4 +42,15 @@ extension XCTestCase {
     public var deviceType: String {
         return stringFromRemoteEndpoint("deviceType")
     }
+    
+    public var orientation: UIInterfaceOrientation {
+        get {
+            let s = stringFromRemoteEndpoint("orientation")
+            let v = Int(s) ?? 0
+            return UIInterfaceOrientation(rawValue: v) ?? .Unknown
+        }
+        set {
+            callRemoteEndpoint("setOrientation", args: String(newValue.rawValue))
+        }
+    }
 }

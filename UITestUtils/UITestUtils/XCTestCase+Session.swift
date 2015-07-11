@@ -47,8 +47,12 @@ extension XCTestCase {
         }
     }
     
-    func urlForEndpoint(endpoint: String) -> NSURL? {
-        let urlString = "\(SessionData.uiTestServerAddress)/\(endpoint)"
+    func urlForEndpoint(endpoint: String, args: [String]) -> NSURL? {
+        var urlString = "\(SessionData.uiTestServerAddress)/\(endpoint)"
+        for arg in args {
+            urlString += "/"
+            urlString += arg.urlencode()
+        }
         let endpoint = NSURL(string: urlString)
         guard let url = endpoint else {
             XCTFail("Invalid URL: \(urlString)")
@@ -57,12 +61,13 @@ extension XCTestCase {
         return url
     }
     
-    func dataFromRemoteEndpoint(endpoint: String) -> NSData? {
-        guard let url = urlForEndpoint(endpoint) else {
+    func dataFromRemoteEndpoint(endpoint: String, method: String, args: [String]) -> NSData? {
+        guard let url = urlForEndpoint(endpoint, args: args) else {
             return nil
         }
         
-        let request = NSURLRequest(URL: url)
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = method
         
         var result: NSData? = nil
         let expectation = expectationWithDescription("dataTask")
@@ -94,13 +99,29 @@ extension XCTestCase {
         return result
     }
     
-    func stringFromRemoteEndpoint(endpoint: String) -> String {
-        let data = dataFromRemoteEndpoint(endpoint)
+    func dataFromRemoteEndpoint(endpoint: String, method: String = "GET", args: String...) -> NSData? {
+        return dataFromRemoteEndpoint(endpoint, method: method, args: args)
+    }
+    
+    func stringFromRemoteEndpoint(endpoint: String, method: String, args: [String]) -> String {
+        let data = dataFromRemoteEndpoint(endpoint, method: method, args: args)
         if let stringData = data {
             let resolution = NSString(data: stringData, encoding: NSUTF8StringEncoding) ?? ""
             return resolution as String
         }
         return ""
+    }
+
+    func stringFromRemoteEndpoint(endpoint: String, method: String = "GET", args: String...) -> String {
+        return stringFromRemoteEndpoint(endpoint, method: method, args: args)
+    }
+
+    func callRemoteEndpoint(endpoint: String, method: String, args: [String]) {
+        let _ = dataFromRemoteEndpoint(endpoint, method: method, args: args)
+    }
+
+    func callRemoteEndpoint(endpoint: String, method: String = "GET", args: String...) {
+        callRemoteEndpoint(endpoint, method: method, args: args)
     }
 }
 

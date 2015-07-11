@@ -26,5 +26,6 @@
 @interface PrivateUtils : NSObject
 
 + (UIImage *)takeScreenshot;
++ (void)forceOrientation:(int)orientation;
 
 @end

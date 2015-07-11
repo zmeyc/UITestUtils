@@ -37,4 +37,13 @@ UIImage *_UICreateScreenUIImage();
 #endif
 }
 
+// http://stackoverflow.com/questions/12650137/how-to-change-the-device-orientation-programmatically-in-ios-6
++ (void)forceOrientation:(int)orientation
+{
+#ifdef DEBUG
+    NSNumber *value = [NSNumber numberWithInt:orientation];
+    [[UIDevice currentDevice] setValue:value forKey:@"orientation"];
+#endif
+}
+
 @end

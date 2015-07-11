@@ -4,9 +4,9 @@ UITestUtils extend Xcode7 UI Testing framework (XCTest).
 
 ```swift
 func testExample() {
-	//uiTestServerAddress = "http://localhost:5000" // test device IP address, localhost for Simulator
-        
 	let app = XCUIApplication()
+
+	//uiTestServerAddress = "http://localhost:5000" // device IP address or localhost for Simulator
 
 	overrideStatusBar() // Set 9:41 AM, 100% battery
 
@@ -14,9 +14,11 @@ func testExample() {
 
 	waitForDuration(2) // Wait 2 seconds
 
+	orientation = .LandscapeLeft // Rotate the simulator
+
 	app.buttons["Alert"].tap()
 
-	saveScreenshot("\(realHomeDirectory)/Screenshots/\(screenResolution)_Screenshot1.png")
+	saveScreenshot("\(realHomeDirectory)/Screenshots/\(deviceType)_\(screenResolution)_Screenshot1.png")
 
 	restoreStatusBar() // Restore original status bar
 }
@@ -25,7 +27,9 @@ func testExample() {
 # Features
 
 * Automate screenshot capture for AppStore submission
+* Rotate the simulator programmatically
 * Delay test execution for a specified number of seconds
+* Override statusbar to show 9:41 AM, 100% battery like on Apple product photos
 
 # System requirements
 
@@ -41,15 +45,15 @@ Currently, it has some limitations. UI elements can be accessed using various se
 
 Also, it's not yet possible to capture screenshots in a controlled manner while running the test. It would be very handy to group them by device or screen size for AppStore submission.
 
-This library adds some helper functions to solve these issues.
+This library adds a set of helper functions to solve these issues.
 
 ## How it works
 
-This framework consists of two subprojects:
+The library consists of two subprojects:
 
  * **UITestUtils** is to be used in UI tests. It contains extensions to XCTestCase. Some functions use sockets to communicate with the app being tested if something needs to be done on the app side. 
 
- * **UITestServer** is to be be linked with the app being tested to serve UITestUtils requests. It uses private APIs for screenshot capture, but they're commented out in non-Debug builds.
+ * **UITestServer** is to be be linked with the app being tested to serve UITestUtils requests. It uses private APIs for screenshot capture and screen rotation, but they're commented out in non-Debug builds.
 
 ## Contacts
 
@@ -83,7 +87,7 @@ In UI Tests import UITestUtils:
 import UITestUtils
 ```
 
-Use any of the functions described below:
+The following functions will be available:
 
 ### waitForDuration
 
@@ -91,7 +95,7 @@ Use any of the functions described below:
 func waitForDuration(seconds: NSTimeInterval)
 ```
 
-Pauses execution of the test for specified number of seconds. Example:
+Pauses execution of the test for a specified number of seconds. Example:
 
 ```swift
 waitForDuration(5)
@@ -159,9 +163,22 @@ let deviceType: String
 Returns 'pad' or 'phone'.
 Requires UITestServer to be running on the app side.
 
+```swift
+var orientation: UIInterfaceOrientation
+```
+
+Assign this property to rotate the simulator. Read the property to determine current orientation.
+Requires UITestServer to be running on the app side.
+
+Example:
+
+```switch
+orientation = .LandscapeLeft
+```
+
 ## Utilities
 
-Use `Scripts/reset_simulators.sh` script to reset all simulators to their original state.
+Use `Scripts/reset_simulators.sh` to reset all simulators to their original state.
 
 ## Sample code
 

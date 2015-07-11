@@ -31,26 +31,62 @@ public class UITestServer {
         let server = HttpServer()
         
         server["/screenshot.png"] = { request in
-            guard let screenshot = UITestServer.takeScreenshot() else {
-                return .InternalServerError
+            var dataOrNil: NSData?
+            dispatch_sync(dispatch_get_main_queue()) {
+                if let screenshot = UITestServer.takeScreenshot() {
+                    if let screenshotData = UIImagePNGRepresentation(screenshot) {
+                        dataOrNil = screenshotData
+                    }
+                }
             }
-            guard let data = UIImagePNGRepresentation(screenshot) else {
-                print("Unable to create PNG")
+            guard let data = dataOrNil else {
+                print("Unable to create screenshot")
                 return .InternalServerError
             }
             return .RAW(200, data)
         }
         
         server["/screenResolution"] = { request in
-            let resolution = UITestServer.screenResolution()
-            let data = resolution.dataUsingEncoding(NSUTF8StringEncoding) ?? NSData()
+            var data = NSData()
+            dispatch_sync(dispatch_get_main_queue()) {
+                let resolution = UITestServer.screenResolution()
+                if let resolutionData = resolution.dataUsingEncoding(NSUTF8StringEncoding) {
+                    data = resolutionData
+                }
+            }
             return .RAW(200, data)
         }
         
         server["/deviceType"] = { request in
-            let deviceType = UITestServer.deviceType()
-            let data = deviceType.dataUsingEncoding(NSUTF8StringEncoding) ?? NSData()
+            var data = NSData()
+            dispatch_sync(dispatch_get_main_queue()) {
+                let deviceType = UITestServer.deviceType()
+                if let deviceTypeData = deviceType.dataUsingEncoding(NSUTF8StringEncoding) {
+                    data = deviceTypeData
+                }
+            }
             return .RAW(200, data)
+        }
+        
+        server["/orientation"] = { request in
+            var data = NSData()
+            dispatch_sync(dispatch_get_main_queue()) {
+                let orientationString = String(UIApplication.sharedApplication().statusBarOrientation.rawValue)
+                if let orientationData = orientationString.dataUsingEncoding(NSUTF8StringEncoding) {
+                    data = orientationData
+                }
+            }
+            return .RAW(200, data)
+        }
+        
+        server["/setOrientation/(.+)"] = { request in
+            if let orientationString = request.capturedUrlGroups.first {
+                let orientation = Int(orientationString)
+                dispatch_async(dispatch_get_main_queue()) {
+                    PrivateUtils.forceOrientation(Int32(orientation ?? UIInterfaceOrientation.Portrait.rawValue))
+                }
+            }
+            return .RAW(200, NSData())
         }
         
         print("Starting UI Test server on port \(port)")
