@@ -12,6 +12,16 @@
 		CE6010391B4746F400773C38 /* UITestUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6010381B4746F400773C38 /* UITestUtilsTests.swift */; };
 		CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */; };
 		CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */; };
+		CE91018E1B51462B006435D3 /* SDStatusBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91016B1B51462B006435D3 /* SDStatusBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE91018F1B51462B006435D3 /* SDStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE91016C1B51462B006435D3 /* SDStatusBarManager.m */; };
+		CE9101901B51462B006435D3 /* SDStatusBarOverrider.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91016D1B51462B006435D3 /* SDStatusBarOverrider.h */; };
+		CE9101911B51462B006435D3 /* SDStatusBarOverriderPost8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = CE91016E1B51462B006435D3 /* SDStatusBarOverriderPost8_3.h */; };
+		CE9101921B51462B006435D3 /* SDStatusBarOverriderPost8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CE91016F1B51462B006435D3 /* SDStatusBarOverriderPost8_3.m */; };
+		CE9101931B51462B006435D3 /* SDStatusBarOverriderPost9_0.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9101701B51462B006435D3 /* SDStatusBarOverriderPost9_0.h */; };
+		CE9101941B51462B006435D3 /* SDStatusBarOverriderPost9_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9101711B51462B006435D3 /* SDStatusBarOverriderPost9_0.m */; };
+		CE9101951B51462B006435D3 /* SDStatusBarOverriderPre8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9101721B51462B006435D3 /* SDStatusBarOverriderPre8_3.h */; };
+		CE9101961B51462B006435D3 /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9101731B51462B006435D3 /* SDStatusBarOverriderPre8_3.m */; };
+		CE9101A81B51499F006435D3 /* XCTestCase+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9101A71B51499F006435D3 /* XCTestCase+StatusBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +43,16 @@
 		CE60103A1B4746F400773C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Screenshots.swift"; sourceTree = "<group>"; };
+		CE91016B1B51462B006435D3 /* SDStatusBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarManager.h; sourceTree = "<group>"; };
+		CE91016C1B51462B006435D3 /* SDStatusBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarManager.m; sourceTree = "<group>"; };
+		CE91016D1B51462B006435D3 /* SDStatusBarOverrider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverrider.h; sourceTree = "<group>"; };
+		CE91016E1B51462B006435D3 /* SDStatusBarOverriderPost8_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost8_3.h; sourceTree = "<group>"; };
+		CE91016F1B51462B006435D3 /* SDStatusBarOverriderPost8_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost8_3.m; sourceTree = "<group>"; };
+		CE9101701B51462B006435D3 /* SDStatusBarOverriderPost9_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost9_0.h; sourceTree = "<group>"; };
+		CE9101711B51462B006435D3 /* SDStatusBarOverriderPost9_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost9_0.m; sourceTree = "<group>"; };
+		CE9101721B51462B006435D3 /* SDStatusBarOverriderPre8_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPre8_3.h; sourceTree = "<group>"; };
+		CE9101731B51462B006435D3 /* SDStatusBarOverriderPre8_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPre8_3.m; sourceTree = "<group>"; };
+		CE9101A71B51499F006435D3 /* XCTestCase+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+StatusBar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +95,10 @@
 		CE60102B1B4746F400773C38 /* UITestUtils */ = {
 			isa = PBXGroup;
 			children = (
+				CE9101651B51462B006435D3 /* ThirdParty */,
 				CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */,
 				CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */,
+				CE9101A71B51499F006435D3 /* XCTestCase+StatusBar.swift */,
 				CE60102C1B4746F400773C38 /* UITestUtils.h */,
 				CE60102E1B4746F400773C38 /* Info.plist */,
 			);
@@ -92,6 +114,38 @@
 			path = UITestUtilsTests;
 			sourceTree = "<group>";
 		};
+		CE9101651B51462B006435D3 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				CE9101661B51462B006435D3 /* SimulatorStatusMagic */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		CE9101661B51462B006435D3 /* SimulatorStatusMagic */ = {
+			isa = PBXGroup;
+			children = (
+				CE91016A1B51462B006435D3 /* SDStatusBarManager */,
+			);
+			path = SimulatorStatusMagic;
+			sourceTree = "<group>";
+		};
+		CE91016A1B51462B006435D3 /* SDStatusBarManager */ = {
+			isa = PBXGroup;
+			children = (
+				CE91016B1B51462B006435D3 /* SDStatusBarManager.h */,
+				CE91016C1B51462B006435D3 /* SDStatusBarManager.m */,
+				CE91016D1B51462B006435D3 /* SDStatusBarOverrider.h */,
+				CE91016E1B51462B006435D3 /* SDStatusBarOverriderPost8_3.h */,
+				CE91016F1B51462B006435D3 /* SDStatusBarOverriderPost8_3.m */,
+				CE9101701B51462B006435D3 /* SDStatusBarOverriderPost9_0.h */,
+				CE9101711B51462B006435D3 /* SDStatusBarOverriderPost9_0.m */,
+				CE9101721B51462B006435D3 /* SDStatusBarOverriderPre8_3.h */,
+				CE9101731B51462B006435D3 /* SDStatusBarOverriderPre8_3.m */,
+			);
+			path = SDStatusBarManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -100,6 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE60102D1B4746F400773C38 /* UITestUtils.h in Headers */,
+				CE9101931B51462B006435D3 /* SDStatusBarOverriderPost9_0.h in Headers */,
+				CE9101911B51462B006435D3 /* SDStatusBarOverriderPost8_3.h in Headers */,
+				CE9101951B51462B006435D3 /* SDStatusBarOverriderPre8_3.h in Headers */,
+				CE9101901B51462B006435D3 /* SDStatusBarOverrider.h in Headers */,
+				CE91018E1B51462B006435D3 /* SDStatusBarManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +225,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
+				de,
 			);
 			mainGroup = CE60101F1B4746F400773C38;
 			productRefGroup = CE60102A1B4746F400773C38 /* Products */;
@@ -201,7 +262,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */,
+				CE9101941B51462B006435D3 /* SDStatusBarOverriderPost9_0.m in Sources */,
+				CE91018F1B51462B006435D3 /* SDStatusBarManager.m in Sources */,
 				CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */,
+				CE9101A81B51499F006435D3 /* XCTestCase+StatusBar.swift in Sources */,
+				CE9101921B51462B006435D3 /* SDStatusBarOverriderPost8_3.m in Sources */,
+				CE9101961B51462B006435D3 /* SDStatusBarOverriderPre8_3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

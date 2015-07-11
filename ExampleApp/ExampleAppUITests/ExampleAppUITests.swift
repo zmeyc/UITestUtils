@@ -49,6 +49,11 @@ class ExampleAppUITests: XCTestCase {
         uiTestServerAddress = "http://localhost:5000"
         
         let app = XCUIApplication()
+        waitForDuration(2)
+        
+        overrideStatusBar() // Set 9:41 AM, 100% battery. This change is persistent
+        waitForDuration(2)
+        
         let tabBar = app.tabBars
         
         tabBar.buttons["Second"].tap()
@@ -69,6 +74,9 @@ class ExampleAppUITests: XCTestCase {
         waitForDuration(2)
 
         tabBar.buttons["First"].tap()
+        waitForDuration(2)
+        
+        restoreStatusBar() // Restore original status bar
         waitForDuration(5)
     }
 }

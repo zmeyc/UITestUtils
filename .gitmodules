@@ -1,3 +1,6 @@
 [submodule "UITestServer/UITestServer/ThirdParty/swifter"]
 	path = UITestServer/UITestServer/ThirdParty/swifter
 	url = https://github.com/glock45/swifter.git
+[submodule "UITestUtils/UITestUtils/ThirdParty/SimulatorStatusMagic"]
+	path = UITestUtils/UITestUtils/ThirdParty/SimulatorStatusMagic
+	url = https://github.com/shinydevelopment/SimulatorStatusMagic.git

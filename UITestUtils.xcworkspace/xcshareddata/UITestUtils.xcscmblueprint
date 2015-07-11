@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "75224C288D14A799245F99223249EF48FF5DC280" : 0,
+    "DBDF881D36B23F5F099732CF509686F286EB7351" : 0,
     "4EFFEE045BFE270D9512EBDCB8690084ECBB7978" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "53FDDD82-5A2A-404A-943D-353CCA85B387",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "75224C288D14A799245F99223249EF48FF5DC280" : "UITestUtils\/UITestServer\/UITestServer\/ThirdParty\/swifter\/",
+    "DBDF881D36B23F5F099732CF509686F286EB7351" : "UITestUtils\/UITestUtils\/UITestUtils\/ThirdParty\/SimulatorStatusMagic\/",
     "4EFFEE045BFE270D9512EBDCB8690084ECBB7978" : "UITestUtils\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "UITestUtils",
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/glock45\/swifter.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "75224C288D14A799245F99223249EF48FF5DC280"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shinydevelopment\/SimulatorStatusMagic.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DBDF881D36B23F5F099732CF509686F286EB7351"
     }
   ]
 }
