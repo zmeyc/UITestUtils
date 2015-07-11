@@ -16,7 +16,7 @@ func testExample() {
 
 	app.buttons["Alert"].tap()
 
-	saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
+	saveScreenshot("\(realHomeDirectory)/Screenshots/screenshot.png")
 
 	restoreStatusBar() // Restore original status bar
 }
@@ -123,6 +123,26 @@ var uiTestServerAddress: String = 'http://localhost:5000'
 
 Override UITestServer address and/or port by setting this property.
 When running the app on device, this property should be set to device's IP address.
+
+### homeDirectory
+
+```swift
+let realHomeDirectory: String
+```
+
+NSHomeDirectory returns Simulator's sandbox directory such as:
+```
+(lldb) p NSHomeDirectory()
+(String) $R0 = "/Users/user/Library/Developer/CoreSimulator/Devices/666C2BE9-D22D-4261-9A45-F5EE577FF797/data/Containers/Data/Application/C3F3A59F-DA7D-4B3C-9EA2-BC9DD94934F0"
+```
+
+realHomeDirectory drops everything after "/Library/Developer" including that string itself and returns "/Users/user".
+
+Example: save a screenshot to "~/MyAppScreenshots":
+
+```swift
+saveScreenshot("\(realHomeDirectory)/MyAppScreenshots/screenshot.png")
+```
 
 ## Utilities
 

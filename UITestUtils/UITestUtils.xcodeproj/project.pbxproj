@@ -22,6 +22,9 @@
 		CE9101951B51462B006435D3 /* SDStatusBarOverriderPre8_3.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9101721B51462B006435D3 /* SDStatusBarOverriderPre8_3.h */; };
 		CE9101961B51462B006435D3 /* SDStatusBarOverriderPre8_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9101731B51462B006435D3 /* SDStatusBarOverriderPre8_3.m */; };
 		CE9101A81B51499F006435D3 /* XCTestCase+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9101A71B51499F006435D3 /* XCTestCase+StatusBar.swift */; };
+		CE9101AC1B5154B6006435D3 /* XCTestCase+Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9101AB1B5154B6006435D3 /* XCTestCase+Home.swift */; };
+		CE9101AF1B51551B006435D3 /* FSUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CE9101AD1B51551B006435D3 /* FSUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE9101B01B51551B006435D3 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9101AE1B51551B006435D3 /* FSUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		CE9101721B51462B006435D3 /* SDStatusBarOverriderPre8_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPre8_3.h; sourceTree = "<group>"; };
 		CE9101731B51462B006435D3 /* SDStatusBarOverriderPre8_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPre8_3.m; sourceTree = "<group>"; };
 		CE9101A71B51499F006435D3 /* XCTestCase+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+StatusBar.swift"; sourceTree = "<group>"; };
+		CE9101AB1B5154B6006435D3 /* XCTestCase+Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Home.swift"; sourceTree = "<group>"; };
+		CE9101AD1B51551B006435D3 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
+		CE9101AE1B51551B006435D3 /* FSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 				CE8C6E651B47BFDF007CF215 /* XCTestCase+Wait.swift */,
 				CE8C6EE91B49323D007CF215 /* XCTestCase+Screenshots.swift */,
 				CE9101A71B51499F006435D3 /* XCTestCase+StatusBar.swift */,
+				CE9101AB1B5154B6006435D3 /* XCTestCase+Home.swift */,
+				CE9101AD1B51551B006435D3 /* FSUtils.h */,
+				CE9101AE1B51551B006435D3 /* FSUtils.m */,
 				CE60102C1B4746F400773C38 /* UITestUtils.h */,
 				CE60102E1B4746F400773C38 /* Info.plist */,
 			);
@@ -159,6 +168,7 @@
 				CE9101951B51462B006435D3 /* SDStatusBarOverriderPre8_3.h in Headers */,
 				CE9101901B51462B006435D3 /* SDStatusBarOverrider.h in Headers */,
 				CE91018E1B51462B006435D3 /* SDStatusBarManager.h in Headers */,
+				CE9101AF1B51551B006435D3 /* FSUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */,
+				CE9101B01B51551B006435D3 /* FSUtils.m in Sources */,
 				CE9101941B51462B006435D3 /* SDStatusBarOverriderPost9_0.m in Sources */,
 				CE91018F1B51462B006435D3 /* SDStatusBarManager.m in Sources */,
+				CE9101AC1B5154B6006435D3 /* XCTestCase+Home.swift in Sources */,
 				CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */,
 				CE9101A81B51499F006435D3 /* XCTestCase+StatusBar.swift in Sources */,
 				CE9101921B51462B006435D3 /* SDStatusBarOverriderPost8_3.m in Sources */,
