@@ -92,11 +92,10 @@ In Xcode, click the project name at the top of the project tree.
 On the left sidebar, choose `Target: MyProject`.
 On `General` tab, scroll to `Embedded Binaries` section.
 Add `TestServer.framework` as Embedded Binary.
-This will automatically add it to "Link Binary with Libraries" section in Build Phases tab.
+This will automatically add it to `Link Binary with Libraries` section on `Build Phases` tab.
 
 On the left sidebar, choose `Target: MyProject UI Tests`.
-On `General` tab, scroll to `Embedded Binaries` section.
-Add `TestUtils.framework` as Embedded Binary.
+On `Build Phases` tab, add `TestUtils.framework` to `Link Binary With Libraries` section.
 
 If you're stuck with any of the steps above, please check the example project:
 `UITestUtils/ExampleApp/ExampleApp.xcodeproj`
