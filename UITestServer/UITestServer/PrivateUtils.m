@@ -25,6 +25,14 @@
 
 @implementation PrivateUtils
 
++ (BOOL)debug {
+#ifdef DEBUG
+    return YES;
+#else
+    return NO;
+#endif
+}
+
 #ifdef DEBUG
 UIImage *_UICreateScreenUIImage();
 #endif
