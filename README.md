@@ -64,7 +64,44 @@ The library consists of two subprojects:
 
 ## Installation
 
-// TODO
+Add UITestUtils to your project as a submodule:
+
+```
+cd MyProject
+mkdir ThirdParty
+cd ThirdParty
+git clone https://github.com/zmeyc/UITestUtils.git
+```
+
+Download subprojects on which UITestUtils depends:
+
+```
+git submodule update --init --recursive
+```
+
+Open your project in Xcode.
+
+From Finder, drag `ThirdParty/UITestUtils/UITestServer/UITestServer.xcodeproj` into your project in Xcode.
+Put it into any location in the tree below the project root.
+
+Drag `ThirdParty/UITestUtils/UITestUtils/UITestUtils.xcodeproj` into your project in Xcode.
+I recommend putting it into "MyProject UI Tests" folder.
+
+In Xcode, click the project name at the top of the project tree.
+
+On the left sidebar, choose `Target: MyProject`.
+On `General` tab, scroll to `Embedded Binaries` section.
+Add `TestServer.framework` as Embedded Binary.
+This will automatically add it to "Link Binary with Libraries" section in Build Phases tab.
+
+On the left sidebar, choose `Target: MyProject UI Tests`.
+On `General` tab, scroll to `Embedded Binaries` section.
+Add `TestUtils.framework` as Embedded Binary.
+
+If you're stuck with any of the steps above, please check the example project:
+`UITestUtils/ExampleApp/ExampleApp.xcodeproj`
+
+Section below describes the next steps.
 
 ## Usage
 
@@ -86,6 +123,8 @@ In UI Tests import UITestUtils:
 ```swift
 import UITestUtils
 ```
+
+If imports are highlighted in red color, clean Xcode build folder by pressing `Option+Shift+Command+K` then try building the project again.
 
 The following functions will be available:
 
