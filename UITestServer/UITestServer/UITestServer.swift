@@ -28,7 +28,7 @@ public class UITestServer {
     public static let sharedInstance = UITestServer()
     
     public func listen(port: in_port_t = 5000) {
-        if PrivateUtils.debug() {
+        if !PrivateUtils.debug() {
             print("WARNING: UITestServer disabled because DEBUG is not defined")
             return
         }
