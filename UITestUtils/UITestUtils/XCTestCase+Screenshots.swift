@@ -27,7 +27,7 @@ import XCTest
 extension XCTestCase {
     public func saveScreenshot(filename: String, createDirectory: Bool = true) {
         if createDirectory {
-            let directory = filename.stringByDeletingLastPathComponent
+            let directory = (filename as NSString).stringByDeletingLastPathComponent
             let fileManager = NSFileManager.defaultManager()
             if !fileManager.fileExistsAtPath(directory) {
                 do {

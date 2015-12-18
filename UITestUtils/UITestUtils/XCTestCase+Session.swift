@@ -90,11 +90,7 @@ extension XCTestCase {
             result = responseData
             expectation.fulfill()
         }
-        guard let task = dataTask else {
-            XCTFail("Unable to create dataTask")
-            return nil
-        }
-        task.resume()
+        dataTask.resume()
         waitForExpectationsWithTimeout(10.0, handler: nil)
         return result
     }

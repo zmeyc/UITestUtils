@@ -24,6 +24,7 @@
 import UIKit
 
 public class UITestServer {
+    typealias T = UITestServer
     
     public static let sharedInstance = UITestServer()
     
@@ -47,7 +48,7 @@ public class UITestServer {
                 print("Unable to create screenshot")
                 return .InternalServerError
             }
-            return .RAW(200, data)
+            return HttpResponse.RAW(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/screenResolution"] = { request in
@@ -58,7 +59,7 @@ public class UITestServer {
                     data = resolutionData
                 }
             }
-            return .RAW(200, data)
+            return .RAW(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/deviceType"] = { request in
@@ -69,7 +70,7 @@ public class UITestServer {
                     data = deviceTypeData
                 }
             }
-            return .RAW(200, data)
+            return .RAW(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/orientation"] = { request in
@@ -80,21 +81,32 @@ public class UITestServer {
                     data = orientationData
                 }
             }
-            return .RAW(200, data)
+            return .RAW(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
-        server["/setOrientation/(.+)"] = { request in
-            if let orientationString = request.capturedUrlGroups.first {
+        server["/setOrientation/:orientation"] = { request in
+            if let orientationString = request.params["orientation"] {
                 let orientation = Int(orientationString)
                 dispatch_async(dispatch_get_main_queue()) {
                     PrivateUtils.forceOrientation(Int32(orientation ?? UIInterfaceOrientation.Portrait.rawValue))
                 }
             }
-            return .RAW(200, NSData())
+            return .RAW(200, "OK", nil, [UInt8]())
         }
         
         print("Starting UI Test server on port \(port)")
-        server.start(port)
+        do {
+            try server.start(port)
+        } catch {
+            print("Failed to start the server")
+        }
+    }
+    
+    private class func dataToUInt8Array(data: NSData) -> [UInt8] {
+        let count = data.length / sizeof(UInt8)
+        var array = [UInt8](count: count, repeatedValue: 0)
+        data.getBytes(&array, length:count * sizeof(UInt8))
+        return array
     }
     
     private class func takeScreenshot() -> UIImage? {

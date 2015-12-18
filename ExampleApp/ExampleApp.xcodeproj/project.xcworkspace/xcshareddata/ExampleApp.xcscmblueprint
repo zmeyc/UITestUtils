@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4EFFEE045BFE270D9512EBDCB8690084ECBB7978",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "75224C288D14A799245F99223249EF48FF5DC280" : 0,
+    "DBDF881D36B23F5F099732CF509686F286EB7351" : 0,
+    "4EFFEE045BFE270D9512EBDCB8690084ECBB7978" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C2A914F8-DC33-43D9-9483-F4428BE944F2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "75224C288D14A799245F99223249EF48FF5DC280" : "UITestUtils\/UITestServer\/UITestServer\/ThirdParty\/swifter\/",
+    "DBDF881D36B23F5F099732CF509686F286EB7351" : "UITestUtils\/UITestUtils\/UITestUtils\/ThirdParty\/SimulatorStatusMagic\/",
+    "4EFFEE045BFE270D9512EBDCB8690084ECBB7978" : "UITestUtils\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ExampleApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ExampleApp\/ExampleApp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zmeyc\/UITestUtils.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4EFFEE045BFE270D9512EBDCB8690084ECBB7978"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/glock45\/swifter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "75224C288D14A799245F99223249EF48FF5DC280"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/shinydevelopment\/SimulatorStatusMagic.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DBDF881D36B23F5F099732CF509686F286EB7351"
+    }
+  ]
+}

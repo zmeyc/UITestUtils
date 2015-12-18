@@ -17,10 +17,23 @@
 		CE8637141B474824006B54EC /* ExampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8637131B474824006B54EC /* ExampleAppUITests.swift */; };
 		CEB05D6C1B499E5E00DD9604 /* UITestServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB05D671B499E3800DD9604 /* UITestServer.framework */; };
 		CEB05D6D1B499E5E00DD9604 /* UITestServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEB05D671B499E3800DD9604 /* UITestServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CEB05D701B499E7700DD9604 /* UITestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE88DFC61B499DBA00CA27ED /* UITestUtils.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CE6DA5851C246A3500D40DC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE88DFC01B499DBA00CA27ED /* UITestUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE6010291B4746F400773C38;
+			remoteInfo = UITestUtils;
+		};
+		CE6DA5871C246A3500D40DC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE88DFC01B499DBA00CA27ED /* UITestUtils.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE6010331B4746F400773C38;
+			remoteInfo = UITestUtilsTests;
+		};
 		CE8637051B474824006B54EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE8636E61B474824006B54EC /* Project object */;
@@ -34,20 +47,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = CE8636ED1B474824006B54EC;
 			remoteInfo = ExampleApp;
-		};
-		CE88DFC51B499DBA00CA27ED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE88DFC01B499DBA00CA27ED /* UITestUtils.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE6010291B4746F400773C38;
-			remoteInfo = UITestUtils;
-		};
-		CE88DFC71B499DBA00CA27ED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE88DFC01B499DBA00CA27ED /* UITestUtils.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE6010331B4746F400773C38;
-			remoteInfo = UITestUtilsTests;
 		};
 		CEB05D661B499E3800DD9604 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -125,13 +124,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEB05D701B499E7700DD9604 /* UITestUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE6DA5811C246A3500D40DC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE6DA5861C246A3500D40DC5 /* UITestUtils.framework */,
+				CE6DA5881C246A3500D40DC5 /* UITestUtilsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CE8636E51B474824006B54EC = {
 			isa = PBXGroup;
 			children = (
@@ -184,15 +191,6 @@
 				CE8637151B474824006B54EC /* Info.plist */,
 			);
 			path = ExampleAppUITests;
-			sourceTree = "<group>";
-		};
-		CE88DFC11B499DBA00CA27ED /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE88DFC61B499DBA00CA27ED /* UITestUtils.framework */,
-				CE88DFC81B499DBA00CA27ED /* UITestUtilsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		CEB05D621B499E3600DD9604 /* Products */ = {
@@ -301,7 +299,7 @@
 					ProjectRef = CE88DFA91B4999C000CA27ED /* UITestServer.xcodeproj */;
 				},
 				{
-					ProductGroup = CE88DFC11B499DBA00CA27ED /* Products */;
+					ProductGroup = CE6DA5811C246A3500D40DC5 /* Products */;
 					ProjectRef = CE88DFC01B499DBA00CA27ED /* UITestUtils.xcodeproj */;
 				},
 			);
@@ -315,18 +313,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		CE88DFC61B499DBA00CA27ED /* UITestUtils.framework */ = {
+		CE6DA5861C246A3500D40DC5 /* UITestUtils.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = UITestUtils.framework;
-			remoteRef = CE88DFC51B499DBA00CA27ED /* PBXContainerItemProxy */;
+			remoteRef = CE6DA5851C246A3500D40DC5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CE88DFC81B499DBA00CA27ED /* UITestUtilsTests.xctest */ = {
+		CE6DA5881C246A3500D40DC5 /* UITestUtilsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = UITestUtilsTests.xctest;
-			remoteRef = CE88DFC71B499DBA00CA27ED /* PBXContainerItemProxy */;
+			remoteRef = CE6DA5871C246A3500D40DC5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		CEB05D671B499E3800DD9604 /* UITestServer.framework */ = {
