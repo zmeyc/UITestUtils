@@ -33,7 +33,7 @@ func testExample() {
 
 # System requirements
 
-Xcode 7+, Swift 2.0+, iOS 9+
+Xcode 7.2+, Swift 2.0+, iOS 9+
 
 Tested only on Simulators, but should work with devices as well.
 
