@@ -34,6 +34,13 @@
 			remoteGlobalIDString = CE6010331B4746F400773C38;
 			remoteInfo = UITestUtilsTests;
 		};
+		CE6DA5921C247C9900D40DC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE88DFC01B499DBA00CA27ED /* UITestUtils.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = CE6010281B4746F400773C38;
+			remoteInfo = UITestUtils;
+		};
 		CE8637051B474824006B54EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE8636E61B474824006B54EC /* Project object */;
@@ -217,6 +224,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CE6DA5931C247C9900D40DC5 /* PBXTargetDependency */,
 				CEB05D6F1B499E5E00DD9604 /* PBXTargetDependency */,
 			);
 			name = ExampleApp;
@@ -400,6 +408,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE6DA5931C247C9900D40DC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UITestUtils;
+			targetProxy = CE6DA5921C247C9900D40DC5 /* PBXContainerItemProxy */;
+		};
 		CE8637061B474824006B54EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE8636ED1B474824006B54EC /* ExampleApp */;
