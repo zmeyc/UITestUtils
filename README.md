@@ -57,26 +57,18 @@ The library consists of two subprojects:
 
 ## Contacts
 
-- If you **need help**, feel free to contact the developer or use [Stack Overflow](http://stackoverflow.com/questions/tagged/xctest).
-- If you **found a bug**, open an issue.
-- If you **have a feature request**, open an issue.
+- If you **need help**, **found a bug** or **have a feature request**, please open an issue.
 - If you **want to contribute**, submit a pull request.
 
 ## Installation
 
-Add UITestUtils to your project as a submodule:
+Add UITestUtils to your project:
 
 ```
 cd MyProject
 mkdir ThirdParty
 cd ThirdParty
-git clone https://github.com/zmeyc/UITestUtils.git
-```
-
-Download subprojects on which UITestUtils depends:
-
-```
-git submodule update --init --recursive
+git clone --recursive https://github.com/zmeyc/UITestUtils.git
 ```
 
 Open your project in Xcode.
