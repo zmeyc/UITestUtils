@@ -152,7 +152,7 @@ saveScreenshot("/Users/user/Temp/Screenshots/screenshot.png")
 ### uiTestServerAddress
 
 ```swift
-var uiTestServerAddress: String = 'http://localhost:5000'
+var uiTestServerAddress: String = "http://localhost:5000"
 ```
 
 Override UITestServer address and/or port by setting this property.
