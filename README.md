@@ -1,6 +1,6 @@
 # TestUtils
 
-UITestUtils extend Xcode7 UI Testing framework (XCTest).
+UITestUtils extend Xcode 7 UI Testing framework (XCTest).
 
 ```swift
 func testExample() {
@@ -39,7 +39,7 @@ Tested only on Simulators, but should work with devices as well.
 
 ## About
 
-Xcode7 introduced UI testing as a new major feature of XCTest framework.
+Xcode 7 introduced UI testing as a new major feature of XCTest framework.
 
 Currently, it has some limitations. UI elements can be accessed using various selectors such as `app.buttons["My Button"]`, but there is no direct access to app's classes. It's not possible to call an arbitrary function in the app.
 
@@ -208,7 +208,7 @@ Requires UITestServer to be running on the app side.
 
 Example:
 
-```switch
+```swift
 orientation = .LandscapeLeft
 ```
 
