@@ -77,8 +77,7 @@ class ExampleAppUITests: XCTestCase {
         app.buttons["Alert"].tap()
         waitForDuration(2)
         
-        app.sheets["Message"].collectionViews
-            .buttons["Ok"].tap()
+        app.sheets["Message"].buttons["Ok"].tap()
         waitForDuration(2)
 
         tabBar.buttons["First"].tap()
