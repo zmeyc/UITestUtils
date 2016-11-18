@@ -25,13 +25,13 @@ import Foundation
 import XCTest
 
 extension XCTestCase {
-    public func saveScreenshot(filename: String, createDirectory: Bool = true) {
+    public func saveScreenshot(_ filename: String, createDirectory: Bool = true) {
         if createDirectory {
-            let directory = (filename as NSString).stringByDeletingLastPathComponent
-            let fileManager = NSFileManager.defaultManager()
-            if !fileManager.fileExistsAtPath(directory) {
+            let directory = (filename as NSString).deletingLastPathComponent
+            let fileManager = FileManager.default
+            if !fileManager.fileExists(atPath: directory) {
                 do {
-                    try fileManager.createDirectoryAtPath(directory, withIntermediateDirectories: true, attributes: nil)
+                    try fileManager.createDirectory(atPath: directory, withIntermediateDirectories: true, attributes: nil)
                 } catch {
                     // Ignore
                 }
@@ -43,11 +43,11 @@ extension XCTestCase {
             XCTFail("No data received (UITestServer not running?)")
             return
         }
-        if imageData.length == 0 {
+        if imageData.count == 0 {
             XCTFail("Empty screenshot received")
             return
         }
-        if !imageData.writeToFile(filename, atomically: false) {
+        if !((try? imageData.write(to: URL(fileURLWithPath: filename), options: [])) != nil) {
             XCTFail("Unable to save the screenshot: \(filename)")
         }
         print("Screenshot saved: \(filename)")

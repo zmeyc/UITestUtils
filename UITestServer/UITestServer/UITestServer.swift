@@ -23,12 +23,12 @@
 
 import UIKit
 
-public class UITestServer {
+open class UITestServer {
     typealias T = UITestServer
     
-    public static let sharedInstance = UITestServer()
+    open static let sharedInstance = UITestServer()
     
-    public func listen(port: in_port_t = 5000) {
+    open func listen(_ port: in_port_t = 5000) {
         if !PrivateUtils.debug() {
             print("WARNING: UITestServer disabled because DEBUG is not defined")
             return
@@ -36,8 +36,8 @@ public class UITestServer {
         let server = HttpServer()
         
         server["/screenshot.png"] = { request in
-            var dataOrNil: NSData?
-            dispatch_sync(dispatch_get_main_queue()) {
+            var dataOrNil: Data?
+            DispatchQueue.main.sync {
                 if let screenshot = UITestServer.takeScreenshot() {
                     if let screenshotData = UIImagePNGRepresentation(screenshot) {
                         dataOrNil = screenshotData
@@ -46,52 +46,52 @@ public class UITestServer {
             }
             guard let data = dataOrNil else {
                 print("Unable to create screenshot")
-                return .InternalServerError
+                return .internalServerError
             }
-            return HttpResponse.RAW(200, "OK", nil, T.dataToUInt8Array(data))
+            return HttpResponse.raw(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/screenResolution"] = { request in
-            var data = NSData()
-            dispatch_sync(dispatch_get_main_queue()) {
+            var data = Data()
+            DispatchQueue.main.sync {
                 let resolution = UITestServer.screenResolution()
-                if let resolutionData = resolution.dataUsingEncoding(NSUTF8StringEncoding) {
+                if let resolutionData = resolution.data(using: String.Encoding.utf8) {
                     data = resolutionData
                 }
             }
-            return .RAW(200, "OK", nil, T.dataToUInt8Array(data))
+            return .raw(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/deviceType"] = { request in
-            var data = NSData()
-            dispatch_sync(dispatch_get_main_queue()) {
+            var data = Data()
+            DispatchQueue.main.sync {
                 let deviceType = UITestServer.deviceType()
-                if let deviceTypeData = deviceType.dataUsingEncoding(NSUTF8StringEncoding) {
+                if let deviceTypeData = deviceType.data(using: String.Encoding.utf8) {
                     data = deviceTypeData
                 }
             }
-            return .RAW(200, "OK", nil, T.dataToUInt8Array(data))
+            return .raw(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/orientation"] = { request in
-            var data = NSData()
-            dispatch_sync(dispatch_get_main_queue()) {
-                let orientationString = String(UIApplication.sharedApplication().statusBarOrientation.rawValue)
-                if let orientationData = orientationString.dataUsingEncoding(NSUTF8StringEncoding) {
+            var data = Data()
+            DispatchQueue.main.sync {
+                let orientationString = String(UIApplication.shared.statusBarOrientation.rawValue)
+                if let orientationData = orientationString.data(using: String.Encoding.utf8) {
                     data = orientationData
                 }
             }
-            return .RAW(200, "OK", nil, T.dataToUInt8Array(data))
+            return .raw(200, "OK", nil, T.dataToUInt8Array(data))
         }
         
         server["/setOrientation/:orientation"] = { request in
             if let orientationString = request.params["orientation"] {
                 let orientation = Int(orientationString)
-                dispatch_async(dispatch_get_main_queue()) {
-                    PrivateUtils.forceOrientation(Int32(orientation ?? UIInterfaceOrientation.Portrait.rawValue))
+                DispatchQueue.main.async {
+                    PrivateUtils.forceOrientation(Int32(orientation ?? UIInterfaceOrientation.portrait.rawValue))
                 }
             }
-            return .RAW(200, "OK", nil, [UInt8]())
+            return .raw(200, "OK", nil, [UInt8]())
         }
         
         print("Starting UI Test server on port \(port)")
@@ -102,19 +102,19 @@ public class UITestServer {
         }
     }
     
-    private class func dataToUInt8Array(data: NSData) -> [UInt8] {
-        let count = data.length / sizeof(UInt8)
-        var array = [UInt8](count: count, repeatedValue: 0)
-        data.getBytes(&array, length:count * sizeof(UInt8))
+    fileprivate class func dataToUInt8Array(_ data: Data) -> [UInt8] {
+        let count = data.count / MemoryLayout<UInt8>.size
+        var array = [UInt8](repeating: 0, count: count)
+        (data as NSData).getBytes(&array, length:count * MemoryLayout<UInt8>.size)
         return array
     }
     
-    private class func takeScreenshot() -> UIImage? {
+    fileprivate class func takeScreenshot() -> UIImage? {
         return PrivateUtils.takeScreenshot()
     }
     
-    private class func screenResolution() -> String {
-        let screen = UIScreen.mainScreen()
+    fileprivate class func screenResolution() -> String {
+        let screen = UIScreen.main
         let bounds = screen.bounds
         let scale = screen.scale
         let width = Int(bounds.size.width * scale)
@@ -122,7 +122,7 @@ public class UITestServer {
         return "\(width)x\(height)"
     }
     
-    private class func deviceType() -> String {
-        return UIDevice.currentDevice().userInterfaceIdiom == .Pad ? "pad" : "phone"
+    fileprivate class func deviceType() -> String {
+        return UIDevice.current.userInterfaceIdiom == .pad ? "pad" : "phone"
     }
 }

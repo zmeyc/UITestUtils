@@ -47,7 +47,7 @@ extension XCTestCase {
         get {
             let s = stringFromRemoteEndpoint("orientation")
             let v = Int(s) ?? 0
-            return UIInterfaceOrientation(rawValue: v) ?? .Unknown
+            return UIInterfaceOrientation(rawValue: v) ?? .unknown
         }
         set {
             callRemoteEndpoint("setOrientation", args: String(newValue.rawValue))

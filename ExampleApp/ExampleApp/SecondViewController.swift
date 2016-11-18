@@ -23,24 +23,24 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func alertButtonTouchUpInside(sender: AnyObject) {
+    @IBAction func alertButtonTouchUpInside(_ sender: AnyObject) {
         textField.endEditing(false)
         
-        let alert = UIAlertController(title: "Message", message: textField.text, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: "Message", message: textField.text, preferredStyle: .actionSheet)
         if let popover = alert.popoverPresentationController {
             popover.sourceView = alertButton
             popover.sourceRect = alertButton.bounds
         }
         
-        let okAction = UIAlertAction(title: "Ok", style: .Default) { action in
+        let okAction = UIAlertAction(title: "Ok", style: .default) { action in
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { action in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
         }
         
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
 }

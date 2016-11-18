@@ -34,10 +34,10 @@ extension XCTestCase {
             // Hack: turn "/Users/user/Library/Developer/CoreSimulator/Devices/666C2BE9-..."
             // into "/Users/user"
             let home = NSHomeDirectory()
-            guard let range = home.rangeOfString("/Library/Developer/") else {
+            guard let range = home.range(of: "/Library/Developer/") else {
                 return ""
             }
-            return home.substringToIndex(range.startIndex)
+            return home.substring(to: range.lowerBound)
             
         }
     }

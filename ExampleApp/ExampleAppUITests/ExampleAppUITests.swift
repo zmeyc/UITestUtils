@@ -62,11 +62,11 @@ class ExampleAppUITests: XCTestCase {
         saveScreenshot("\(realHomeDirectory)/Temp/Screenshots/\(deviceType)_\(screenResolution)_screenshot1.png")
         waitForDuration(2)
 
-        orientation = .LandscapeLeft
+        orientation = .landscapeLeft
         waitForDuration(2)
 
         print("Current orientation (as Int): \(orientation.rawValue)")
-        orientation = .Portrait
+        orientation = .portrait
         waitForDuration(2)
 
         let textField = app.textFields["Enter text"]
