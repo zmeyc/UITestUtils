@@ -37,9 +37,35 @@
 UIImage *_UICreateScreenUIImage();
 #endif
 
+#ifdef DEBUG
++ (UIImage *)rotateImage:(UIImage *)sourceImage clockwise:(BOOL)clockwise
+{
+    CGSize size = sourceImage.size;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.height, size.width), YES, sourceImage.scale);
+    [[UIImage imageWithCGImage:[sourceImage CGImage]
+                         scale:1.0
+                   orientation:clockwise ? UIImageOrientationRight : UIImageOrientationLeft]
+     drawInRect:CGRectMake(0,0,size.height ,size.width)];
+    
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+#endif
+
 + (UIImage *)takeScreenshot {
 #ifdef DEBUG
-    return _UICreateScreenUIImage();
+    UIImage *image = _UICreateScreenUIImage();
+    switch ([UIApplication sharedApplication].statusBarOrientation) {
+    case UIInterfaceOrientationLandscapeLeft:
+        return [[self class] rotateImage: image clockwise: YES];
+    case UIInterfaceOrientationLandscapeRight:
+        return [[self class] rotateImage: image clockwise: NO];
+    default:
+        break;
+    }
+    return image;
 #else
     return nil;
 #endif

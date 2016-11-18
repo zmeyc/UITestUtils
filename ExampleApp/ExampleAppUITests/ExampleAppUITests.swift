@@ -65,6 +65,8 @@ class ExampleAppUITests: XCTestCase {
         orientation = .landscapeLeft
         waitForDuration(2)
 
+        saveScreenshot("\(realHomeDirectory)/Temp/Screenshots/\(deviceType)_\(screenResolution)_screenshot2.png")
+        
         print("Current orientation (as Int): \(orientation.rawValue)")
         orientation = .portrait
         waitForDuration(2)
