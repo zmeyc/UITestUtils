@@ -29,6 +29,10 @@
 		CE9101B61B5169A8006435D3 /* XCTestCase+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9101B51B5169A8006435D3 /* XCTestCase+Session.swift */; };
 		CEE1DB091B518FBF004460A0 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = CEE1DB071B518FBF004460A0 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEE1DB0A1B518FBF004460A0 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1DB081B518FBF004460A0 /* NSString+URLEncode.m */; };
+		CEFD26411DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.h in Headers */ = {isa = PBXBuildFile; fileRef = CEFD263D1DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.h */; };
+		CEFD26421DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD263E1DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.m */; };
+		CEFD26431DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.h in Headers */ = {isa = PBXBuildFile; fileRef = CEFD263F1DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.h */; };
+		CEFD26441DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFD26401DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		CE9101B51B5169A8006435D3 /* XCTestCase+Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Session.swift"; sourceTree = "<group>"; };
 		CEE1DB071B518FBF004460A0 /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		CEE1DB081B518FBF004460A0 /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		CEFD263D1DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost9_3.h; sourceTree = "<group>"; };
+		CEFD263E1DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost9_3.m; sourceTree = "<group>"; };
+		CEFD263F1DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost10_0.h; sourceTree = "<group>"; };
+		CEFD26401DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost10_0.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,10 @@
 				CE91016F1B51462B006435D3 /* SDStatusBarOverriderPost8_3.m */,
 				CE9101701B51462B006435D3 /* SDStatusBarOverriderPost9_0.h */,
 				CE9101711B51462B006435D3 /* SDStatusBarOverriderPost9_0.m */,
+				CEFD263D1DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.h */,
+				CEFD263E1DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.m */,
+				CEFD263F1DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.h */,
+				CEFD26401DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.m */,
 				CE9101721B51462B006435D3 /* SDStatusBarOverriderPre8_3.h */,
 				CE9101731B51462B006435D3 /* SDStatusBarOverriderPre8_3.m */,
 			);
@@ -174,6 +186,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFD26431DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.h in Headers */,
 				CE60102D1B4746F400773C38 /* UITestUtils.h in Headers */,
 				CE9101931B51462B006435D3 /* SDStatusBarOverriderPost9_0.h in Headers */,
 				CE9101911B51462B006435D3 /* SDStatusBarOverriderPost8_3.h in Headers */,
@@ -182,6 +195,7 @@
 				CE91018E1B51462B006435D3 /* SDStatusBarManager.h in Headers */,
 				CEE1DB091B518FBF004460A0 /* NSString+URLEncode.h in Headers */,
 				CE9101AF1B51551B006435D3 /* FSUtils.h in Headers */,
+				CEFD26411DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9101B21B515DDE006435D3 /* XCTestCase+DeviceInfo.swift in Sources */,
+				CEFD26421DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.m in Sources */,
 				CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */,
 				CE9101B01B51551B006435D3 /* FSUtils.m in Sources */,
 				CE9101941B51462B006435D3 /* SDStatusBarOverriderPost9_0.m in Sources */,
+				CEFD26441DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.m in Sources */,
 				CE91018F1B51462B006435D3 /* SDStatusBarManager.m in Sources */,
 				CE9101AC1B5154B6006435D3 /* XCTestCase+Home.swift in Sources */,
 				CE8C6E661B47BFDF007CF215 /* XCTestCase+Wait.swift in Sources */,
