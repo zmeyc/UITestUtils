@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2CF8FE20F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2CF8F820F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.h */; };
+		CE2CF8FF20F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CF8F920F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.m */; };
+		CE2CF90020F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2CF8FA20F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.h */; };
+		CE2CF90120F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CF8FB20F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.m */; };
+		CE2CF90220F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.h in Headers */ = {isa = PBXBuildFile; fileRef = CE2CF8FC20F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.h */; };
+		CE2CF90320F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CF8FD20F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.m */; };
 		CE60102D1B4746F400773C38 /* UITestUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = CE60102C1B4746F400773C38 /* UITestUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE6010341B4746F400773C38 /* UITestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6010291B4746F400773C38 /* UITestUtils.framework */; };
 		CE6010391B4746F400773C38 /* UITestUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6010381B4746F400773C38 /* UITestUtilsTests.swift */; };
@@ -46,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2CF8F820F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost10_3.h; sourceTree = "<group>"; };
+		CE2CF8F920F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost10_3.m; sourceTree = "<group>"; };
+		CE2CF8FA20F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost11_0.h; sourceTree = "<group>"; };
+		CE2CF8FB20F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost11_0.m; sourceTree = "<group>"; };
+		CE2CF8FC20F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDStatusBarOverriderPost12_0.h; sourceTree = "<group>"; };
+		CE2CF8FD20F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDStatusBarOverriderPost12_0.m; sourceTree = "<group>"; };
 		CE6010291B4746F400773C38 /* UITestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UITestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE60102C1B4746F400773C38 /* UITestUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITestUtils.h; sourceTree = "<group>"; };
 		CE60102E1B4746F400773C38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +174,12 @@
 		CE91016A1B51462B006435D3 /* SDStatusBarManager */ = {
 			isa = PBXGroup;
 			children = (
+				CE2CF8F820F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.h */,
+				CE2CF8F920F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.m */,
+				CE2CF8FA20F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.h */,
+				CE2CF8FB20F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.m */,
+				CE2CF8FC20F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.h */,
+				CE2CF8FD20F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.m */,
 				CE91016B1B51462B006435D3 /* SDStatusBarManager.h */,
 				CE91016C1B51462B006435D3 /* SDStatusBarManager.m */,
 				CE91016D1B51462B006435D3 /* SDStatusBarOverrider.h */,
@@ -187,13 +205,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFD26431DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.h in Headers */,
+				CE2CF8FE20F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.h in Headers */,
 				CE60102D1B4746F400773C38 /* UITestUtils.h in Headers */,
 				CE9101931B51462B006435D3 /* SDStatusBarOverriderPost9_0.h in Headers */,
 				CE9101911B51462B006435D3 /* SDStatusBarOverriderPost8_3.h in Headers */,
 				CE9101951B51462B006435D3 /* SDStatusBarOverriderPre8_3.h in Headers */,
 				CE9101901B51462B006435D3 /* SDStatusBarOverrider.h in Headers */,
+				CE2CF90220F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.h in Headers */,
 				CE91018E1B51462B006435D3 /* SDStatusBarManager.h in Headers */,
 				CEE1DB091B518FBF004460A0 /* NSString+URLEncode.h in Headers */,
+				CE2CF90020F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.h in Headers */,
 				CE9101AF1B51551B006435D3 /* FSUtils.h in Headers */,
 				CEFD26411DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.h in Headers */,
 			);
@@ -245,12 +266,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Zabiyaka;
 				TargetAttributes = {
 					CE6010281B4746F400773C38 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0940;
 					};
 					CE6010321B4746F400773C38 = {
 						CreatedOnToolsVersion = 7.0;
@@ -300,10 +321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9101B21B515DDE006435D3 /* XCTestCase+DeviceInfo.swift in Sources */,
+				CE2CF90320F1804E00AB4F75 /* SDStatusBarOverriderPost12_0.m in Sources */,
 				CEFD26421DDE8D1D00BE9456 /* SDStatusBarOverriderPost9_3.m in Sources */,
+				CE2CF90120F1804E00AB4F75 /* SDStatusBarOverriderPost11_0.m in Sources */,
 				CE8C6EEA1B49323D007CF215 /* XCTestCase+Screenshots.swift in Sources */,
 				CE9101B01B51551B006435D3 /* FSUtils.m in Sources */,
 				CE9101941B51462B006435D3 /* SDStatusBarOverriderPost9_0.m in Sources */,
+				CE2CF8FF20F1804E00AB4F75 /* SDStatusBarOverriderPost10_3.m in Sources */,
 				CEFD26441DDE8D1D00BE9456 /* SDStatusBarOverriderPost10_0.m in Sources */,
 				CE91018F1B51462B006435D3 /* SDStatusBarManager.m in Sources */,
 				CE9101AC1B5154B6006435D3 /* XCTestCase+Home.swift in Sources */,
@@ -344,14 +368,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -396,14 +428,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -449,7 +489,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -468,7 +509,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zabiyaka.UITestUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

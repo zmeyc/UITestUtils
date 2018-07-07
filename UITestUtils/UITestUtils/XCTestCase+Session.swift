@@ -73,7 +73,7 @@ extension XCTestCase {
         let expectation = self.expectation(description: "dataTask")
         let dataTask = session.dataTask(with: request) { data, response, error in
             // WARNING: NOT a main queue
-            if error != nil {
+            if let error = error {
                 XCTFail("dataTaskWithRequest error (please check if UITestServer is running): \(error)")
                 return
             }

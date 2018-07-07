@@ -37,8 +37,7 @@ extension XCTestCase {
             guard let range = home.range(of: "/Library/Developer/") else {
                 return ""
             }
-            return home.substring(to: range.lowerBound)
-            
+            return String(home[..<range.lowerBound])
         }
     }
 }
